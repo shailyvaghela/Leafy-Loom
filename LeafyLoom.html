@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- style.css -->
+    <link rel="stylesheet" href="script.js">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="nav.css" />
+    <link rel="stylesheet" type="text/css" href="slid.css" />
+    <!-- jquery cdn -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>LeafyLoom</title>
+    <link rel="shortcut icon" href="Images/LeafyLoomLogo.jpg" type="iamge/x-icon">
+</head>
+
+<body>
+
+    <!-- Scroll To Up Button Starts Here -->
+    <button id="scroll-up" onclick="toFunction()">
+        <i class="icon icon-arrow-up fa-solid fa-arrow-up"></i>
+    </button>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    var scrollButton = document.getElementById("scroll-up");
+    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+        scrollButton.style.display = "block";
+    } else {
+        scrollButton.style.display = "none";
+    }
+}
+
+function toFunction() {
+    window.scrollTo(0, 0);
+}
+
+    </script>
+    <!-- Scroll To Up Button Ends Here -->
+
+    <!-- Navbar Starts Here -->
+    <header class="bg-white">
+        <nav class="flex justify-between items-center w-[92%]  mx-auto">
+            <div>
+                <a class="text-black text-3xl text-decoration-none hover:text-decoration-none hover:text-black"
+                    href="LeafyLoom.html">Leafy</a><a
+                    class="text-green-600 text-3xl text-decoration-none hover:text-decoration-none hover:text-green-600"
+                    href="LeafyLoom.html">Loom</a>
+            </div>
+            <div
+                class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto  w-full flex items-center justify-center px-5 mt-4">
+                <ul class="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
+                    <li>
+                        <a class="hover:text-gray-500" href="LeafyLoom.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#gall">Gallery</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#collect">Collection</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#blog">Blog</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="login.html"><i class="fa-solid fa-user"></i></a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-500" href="ShopAll.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                    </li>
+                </ul>
+            </div>
+    </header>
+    <!-- Navbar Ends Here -->
+
+    <!-- Carousel Starts Here -->
+    <div class="container">
+        <div class="slider-container active">
+            <div class="slide">
+                <div class="content">
+                    <p style="font-size: 60px; font-family: Poppins; color: #588456;">
+                        Plant Today for a Greener Tomorrow.
+                    </p>
+                    <!-- <div>
+                        <img src="Images/carousel-1.jpg" alt="">
+                    </div> -->
+                </div>
+                <div>
+                    <img src="Images/carousel-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slide">
+                <div class="content">
+                    <p style="font-size: 60px; font-family: Poppins; color: #588456;">
+                        Plants Create your Place Special.
+                    </p>
+                    <!-- <div>
+                        <img src="Images/carousel-2.jpg" alt="">
+                    </div> -->
+                </div>
+                <div>
+                    <img src="Images/carousel-2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slider-container">
+            <div class="slide">
+                <div class="content">
+                    <p style="font-size: 60px; font-family: Poppins; color: #588456;">
+                        Rooted in Beauty, Growing with Purpose.
+                    </p>
+                    <!-- <div>
+                        <img src="Images/carousel-3.jpg" alt="">
+                    </div> -->
+                </div>
+                <div>
+                    <img src="Images/carousel-3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-container">
+            <div class="slide">
+                <div class="content">
+                    <p style="font-size: 60px; font-family: Poppins; color: #588456;">
+                        Plant Happiness, Harvest Joy.
+                    </p>
+                    <!-- <div>
+                        <img src="Images/carousel-5.jpg" alt="">
+                    </div> -->
+                </div>
+                <div>
+                    <img src="Images/carousel-5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="prev" onclick="prev()"><</div>
+        <div id="next" onclick="next()">></div>
+        </div>
+        <script>
+            let slides = document.querySelectorAll('.slider-container');
+            let index = 0;
+
+            function next() {
+                slides[index].classList.remove('active');
+                index = (index + 1) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+            function prev() {
+                slides[index].classList.remove('active');
+                index = (index - 1 + slides.length) % slides.length;
+                slides[index].classList.add('active');
+            }
+
+            setInterval(next, 3000);
+        </script>
+        <!-- Carousel Ends Here -->
+
+        <br><br>
+
+        <!-- Our Journey Starts Here -->
+        <div class="container mx-auto mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="p-4">
+                    <img src="Images/video-item.png" alt="video item" class="w-full">
+                </div>
+                <div class="p-4">
+                    <h2 class="text-3xl lg:text-5xl" id="about">Our Journey</h2>
+                    <p class="mt-5">Welcome to Leafyloom, where our journey began with a simple passion for nature
+                        and a profound love for plants. Our story is one of growth, both in terms of the lush foliage
+                        that
+                        fills our surroundings and the blossoming community that has flourished alongside it.</p>
+                    <p class="mt-5">Our journey started with a seed of inspiration, sown by individuals deeply
+                        passionate
+                        about reconnecting people with the beauty of nature. What began as a humble idea soon took root,
+                        driven by a shared vision to make greenery accessible to all.Today, as we reflect on our
+                        journey,
+                        we're grateful for the vibrant community that has flourished alongside us. Together, we've
+                        weathered
+                        storms, celebrated milestones, and watched our collective garden thrive. And as we continue to
+                        grow,
+                        our roots firmly anchored in passion and purpose, we invite you to join us on this evergreen
+                        adventure.
+                    </p>
+                    <button class="btn btn-dark py-3 px-6 text-light rounded-2 mt-5">READ MORE <i
+                            class="fa fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Our Journey Ends Here -->
+
+        <!-- Fresh Arrivals Starts Here -->
+        <div class="container mx-auto mt-3 p-4">
+            <div>
+                <h1 class="text-5xl p-4" id="collect"><i class="fa-solid fa-seedling"></i> Fresh Arivals</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center align-items-center">
+                        <img src="Images/plant-item4.jpg" alt="p1" class="mx-auto mt-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Chinese Money Plant</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 2500</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center align-items-center">
+                        <img src="Images/plant-item5.jpg" alt="p1" class="mx-auto mb-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Calathea Fusion</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 1600</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center items-center">
+                        <img src="Images/plant-item6.jpg" alt="p1" class="mx-auto mt-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Pilea Depressa</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 1800</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center items-center">
+                        <img src="Images/plant-item7.jpg" alt="p1" class="mx-auto mt-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Fasciated Haworthia</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 2200</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-3">
+            <button class="btn btn-dark py-3 px-6 text-light rounded-2"><a href="ShopAll.html"
+                    class="text-decoration-none decor">SHOP ALL </a><i class="fa fa-chevron-right"
+                    aria-hidden="true"></i></button>
+        </div>
+        <!-- Fresh Arivals Ends Here -->
+
+        <!-- Best Collections Starts Here -->
+        <div class="container mx-auto mt-3 p-4">
+            <div>
+                <h1 class="text-5xl p-4"><i class="fa-solid fa-seedling"></i> Best Collections</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3 gap-4">
+                <div class="flex flex-col items-center">
+                    <div class="product-item">
+                        <img src="Images/plant-item8.jpg" alt="img">
+                        <div class="item-info">
+                            <p>Cane plants, also known as Dracaena fragrans or corn plants, are revered for their
+                                striking
+                                appearance and low-maintenance nature. These elegant foliage plants are native to
+                                tropical
+                                Africa and thrive in indoor environments, making them popular choices for home and
+                                office
+                                decor.</p>
+                            <div class="flex justify-center mt-3">
+                                <button class="btn btn-dark py-3 px-6 text-light rounded-2">READ MORE <i
+                                        class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Cane Plants</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="product-item">
+                        <img src="Images/plant-item9.jpg" alt="img">
+                        <div class="item-info1">
+                            <p>Ficus plants, belonging to the genus Ficus within the Moraceae family, encompass a
+                                diverse
+                                group of trees, shrubs, and vines cherished for their ornamental value and air-purifying
+                                qualities. With their glossy leaves, architectural forms, and adaptability to indoor
+                                environments, ficus plants have become popular choices for enhancing interior landscapes
+                                and
+                                bringing a touch of the outdoors inside.</p>
+                            <div class="flex justify-center mt-3">
+                                <button class="btn btn-dark py-3 px-6 text-light rounded-2">READ MORE <i
+                                        class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Ficus Plants</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="product-item">
+                        <img src="Images/plant-item10.jpg" alt="img">
+                        <div class="item-info">
+                            <p>Indoor plants have transcended their role as mere decorations to become essential
+                                elements of
+                                interior design, contributing to both aesthetic appeal and well-being within indoor
+                                spaces.
+                                With their lush foliage, air-purifying capabilities, and mood-enhancing qualities,
+                                indoor
+                                plants have earned a special place in our homes, offices, and public spaces.</p>
+                            <div class="flex justify-center mt-3">
+                                <button class="btn btn-dark py-3 px-6 text-light rounded-2">READ MORE <i
+                                        class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Indoor Plants</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Best Collections Ends Here -->
+
+        <!-- Why Shop With Us Starts Here -->
+        <div class="container-fluid mx-auto mt-10 why-chose h-auto ">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="p-4 why-chose-us">
+                    <h2 class="text-3xl lg:text-5xl ml-3 mt-md-5">Why Shop With Us?</h2>
+                    <p class="mt-5 ml-3 text-justify">At Leafyloom, we offer a premium selection of
+                        top-quality plants sourced from trusted growers and nurseries. With our user-friendly website
+                        shopping for plants has never been easier. Our dedicated team of
+                        experts is passionate about plants and committed to providing personalized advice and support to
+                        ensure your success.
+                    </p>
+                    <ul class="ml-10 mt-5">
+                        <li>
+                            <span class="list-number">1. </span>
+                            <div class="list-tittle">
+                                <h4>Succulents</h4>
+                                <p> These plants are adapted to arid or semi-arid conditions.</p>
+                            </div>
+                        </li><br>
+                        <li>
+                            <span class="list-number">2. </span>
+                            <div class="list-tittle">
+                                <h4>Air Purifiers</h4>
+                                <p>These plants absorb pollutants through their leaves and roots, helping to improve
+                                    indoor
+                                    air quality. </p>
+                            </div>
+                        </li><br>
+                        <li>
+                            <span class="list-number">3. </span>
+                            <div class="list-tittle">
+                                <h4>Decorative</h4>
+                                <p>These plants are valued for their beauty and foliage.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="p-4">
+                    <img src="Images/plant-item15.png" alt="video item" class="w-full">
+                </div>
+            </div>
+        </div>
+        <!-- Why Shop With Us Ends Here -->
+
+        <!-- Popular Items Starts Here -->
+        <div class="container mx-auto mt-3 p-4">
+            <div>
+                <h1 class="text-5xl p-4"><i class="fa-solid fa-seedling"></i> Popular Items</h1>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center align-items-center">
+                        <img src="Images/plant-item11.jpg" alt="p1" class="mx-auto mt-5 mb-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Epipremnum Plant</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 2100</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center align-items-center">
+                        <img src="Images/plant-item12.jpg" alt="p1" class="mx-auto mb-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Rubber Fig Plant</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 1400</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center items-center">
+                        <img src="Images/plant-item13.jpg" alt="p1" class="mx-auto mt-5 mb-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Cereus Repandus Plant</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 1800</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div
+                        class="inner-image rounded-2 w-full md:w-75 h-96 mx-auto mb-4 flex justify-center items-center">
+                        <img src="Images/plant-item14.jpg" alt="p1" class="mx-auto mt-5 mb-5">
+                        <i class="fa-solid fa-heart icon-i" onclick="this.style.color='red'"
+                            ondblclick="this.style.color='black'"></i>
+                        <i class="fa-solid fa-circle fa-2x icon-c"></i>
+                        <div class="product-inner">
+                            <a href="#" class="add-to-cart text-decoration-none"><span class="cart-text  text-black">Add
+                                    to
+                                    cart</span></a>
+                        </div>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl">Arrowhead Plant</h1>
+                        <h1 class="text-xl text-green-900"><i class="fa fa-inr" aria-hidden="true"></i> 2000</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mt-3">
+            <button class="btn btn-dark py-3 px-6 text-light rounded-2"><a href="ShopAll.html"
+                    class="text-decoration-none decor">SHOP ALL </a><i class="fa fa-chevron-right"
+                    aria-hidden="true"></i></button>
+        </div>
+        <!-- Popular Items Ends Here -->
+        <br><br>
+
+        <!-- Grid Starts Here -->
+        <div class="container-fluid  mx-auto mt-3 p-4 services">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="services-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="services-content">
+                        <div class="services-tittle">Free Shipping</div>
+                        <p>Capped at 59 per order</p>
+                    </div>
+                </div>
+                <div class="services-item">
+                    <i class="fa-solid fa-comment-dollar"></i>
+                    <div class="services-content">
+                        <div class="services-tittle">Safe Payment</div>
+                        <p>With our payment gateway</p>
+                    </div>
+                </div>
+                <div class="services-item">
+                    <i class="fa-solid fa-suitcase"></i>
+                    <div class="services-content">
+                        <div class="services-tittle">Quality Guarantee</div>
+                        <p>Fresh & Super item available</p>
+                    </div>
+                </div>
+                <div class="services-item">
+                    <i class="fa-solid fa-tag"></i>
+                    <div class="services-content">
+                        <div class="services-tittle">Big Offers</div>
+                        <p>We give best offers surely</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid Ends Here -->
+        <br><br>
+
+        <!-- My Gallary Starts Here -->
+        <div class="container-fluid " id="gall">
+            <div class="container-fluid pt-3 pb-3">
+                <div>
+                    <h1 class="text-5xl ml-2 p-4"><i class="fa-solid fa-seedling"></i> My Gallary</h1>
+                </div>
+                <div class="gallery">
+                    <img src="Images/p4h.png" alt="" class="horizontal">
+                    <img src="Images/p7s.jpg" alt="" class="square">
+                    <img src="Images/p2h.png" alt="" class="horizontal">
+                    <img src="Images/p8v.jpg" alt="" class="vertical">
+                    <img src="Images/p6s.jpg" alt="" class="square">
+                    <img src="Images/p3h.webp" alt="" class="horizontal">
+                    <img src="Images/p4v.jpg" alt="" class="vertical">
+                    <img src="Images/p1b.jpg" alt="" class="big">
+                    <img src="Images/p1h.jpg" alt="" class="horizontal">
+                    <img src="Images/p5v.jpg" alt="" class="vertical">
+                    <img src="Images/p4b.jpg" alt="" class="big">
+                    <img src="Images/p5h.webp" alt="" class="horizontal">
+                    <img src="Images/p10s.jpg" alt="" class="square">
+                    <img src="Images/p9s.jpg" alt="" class="square">
+                </div>
+            </div>
+        </div>
+        <!-- My Gallary Ends Here -->
+        <br>
+
+        <!-- My Blogs Starts Here -->
+        <div class="container" id="blog">
+            <div class="section-header">
+                <h1 class="text-5xl p-4"><i class="fa-solid fa-seedling"></i> My Blogs</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="post-grid">
+                        <div class="row">
+
+                            <div class="col-md-4">
+
+                                <article class="post-item">
+
+                                    <figure>
+                                        <a href="#" class="image-hvr-effect">
+                                            <img src="Images/post-item15.jpg" alt="post" class="post-image">
+                                        </a>
+                                    </figure>
+
+                                    <div class="post-content">
+                                        <h3 class="post-title">
+                                            <a href="#" class="abc">Decorative touches for your design</a>
+                                        </h3>
+                                        <p>Decorative plants are indoor or outdoor plants grown primarily for their
+                                            aesthetic appeal rather than any practical use. These plants are valued for
+                                            their beauty, foliage, flowers...
+                                        </p>
+                                    </div>
+                                </article>
+
+                            </div>
+
+                            <div class="col-md-4">
+
+                                <article class="post-item">
+                                    <figure>
+                                        <a href="#" class="image-hvr-effect">
+                                            <img src="Images/post-item16.jpg" alt="post" class="post-image">
+                                        </a>
+                                    </figure>
+                                    <div class="post-content">
+                                        <h3 class="post-title">
+                                            <a href="#" class="abc">Giftable scents which warms the heart</a>
+                                        </h3>
+                                        <p>Gifting plants offers numerous benefits. They add beauty and greenery to
+                                            indoor
+                                            and outdoor spaces, improve air quality, and provide a sense of calm and
+                                            relaxation...</p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="col-md-4">
+                                <article class="post-item">
+                                    <figure>
+                                        <a href="#" class="image-hvr-effect">
+                                            <img src="Images/post-item17.jpg" alt="post" class="post-image">
+                                        </a>
+                                    </figure>
+                                    <div class="post-content">
+                                        <h3 class="post-title">
+                                            <a href="#" class="abc">Creative ideas to make your place special</a>
+                                        </h3>
+                                        <p>Popular choices for holidays include flowering plants. They symbolize growth,
+                                            life, and
+                                            renewal, making them suitable for expressing sentiments of love, friendship,
+                                            and
+                                            well-being... </p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="col-md-12 text-center mt-5">
+                                <button class="btn btn-dark py-3 px-6 text-light rounded-2">MORE BLOG <i
+                                        class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- My Blogs Ends Here -->
+        <br><br>
+
+        <!-- Plant Grow People Starts Here -->
+        <div class="marquee">
+            <div class="track">
+                <div class="content">
+                    <div class="roll-in">
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                        <div class="roll-w">
+                            <img src="https://cdn.shopify.com/s/files/1/0579/7924/0580/files/imgpsh_fullsize_animjj.png?v=1656424471"
+                                alt="plants grow people" width="32" height="32">
+                            <span>plants grow people</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Plant Grow People Ends Here -->
+
+        <!-- Footer Starts Here -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h5>get help</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">shipping</a></li>
+                            <li><a href="#">returns</a></li>
+                            <li><a href="#">order status</a></li>
+                            <li><a href="#">payment options</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Cancellation Policy</a></li>
+                            <li><a href="#">Replacement Policy</a></li>
+                            <li><a href="#">Terms & Condition</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Get in touch</h5>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <br>
+                        <a href="contactUs.html"><button class="btn btn-c">Contact Us</button></a>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <p style="text-align: center;font-size: small; color: #bbbbbb;"><i class="fa-regular fa-copyright"></i>
+                2024, leafyloom.co</p>
+        </footer>
+        <!-- Footer Ends Here -->
+</body>
+
+</html>

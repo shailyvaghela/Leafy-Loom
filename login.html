@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="Images/LeafyLoomLogo.jpg" type="iamge/x-icon">
+</head>
+
+<body>
+    <h2 class="back-button"><a href="LeafyLoom.html"><i class="fas fa-arrow-left" style="color: white;"></i></a></h2>
+    <div class="wrapper">
+        <form action="#" onsubmit="return validateForm()">
+            <h2>Login</h2>
+            <div class="input-field">
+                <input type="text" id="e1" onclick="clearErrorMessage('errorMessage')">
+                <p id="errorMessage" style="color: red;"></p>
+                <label>Enter your email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="p1" onclick="clearErrorMessage('errorMessage1')">
+                <p id="errorMessage1" style="color: red;"></p>
+                <label>Enter your password</label>
+            </div>
+            <div class="forget">
+                <label for="remember">
+                    <input type="checkbox" id="remember">
+                    <p>Remember me</p>
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit">Log In</button>
+            <div class="register">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+
+        <script>
+            // function validateForm() {
+            //     var mail = document.getElementById("e1").value;
+            //     var pass = document.getElementById("p1").value;
+            //     var errorMessage = document.getElementById("errorMessage");
+            //     var errorMessage1 = document.getElementById("errorMessage1");
+            //     var checkp = /^_|^@|^\d/;
+            //     var checke = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+            //     errorMessage.textContent = "";
+            //     errorMessage1.textContent = "";
+
+            //     if (mail == "" && pass == "") {
+            //         errorMessage.textContent = "Please fill the email";
+            //         errorMessage1.textContent = "Please fill the password";
+            //         return false;
+            //     }
+            //     if (mail == "") {
+            //         errorMessage.textContent = "Please fill the email";
+            //         return false;
+            //     }
+            //     if (pass == "") {
+            //         errorMessage1.textContent = "Please fill the password";
+            //         return false;
+            //     }
+            //     else {
+            //         if (!checkp.test(pass) && pass.length < 8 && pass.length > 12) {
+            //             errorMessage1.textContent = "Password Invalid! It must be between 8-12";
+            //             return false;
+            //         }
+            //         if (!checke.test(mail)) {
+            //             errorMessage.textContent = "Email Invalid";
+            //             return false;
+            //         }
+            //     }
+
+            //     return false;
+            // }
+            // function clearErrorMessage(e1) {
+            //     document.getElementById(e1).textContent = "";
+            // }
+            // function clearErrorMessage(p1) {
+            //     document.getElementById(p1).textContent = "";
+            // }
+
+            function validateForm() {
+                var mail = document.getElementById("e1").value;
+                var pass = document.getElementById("p1").value;
+                var errorMessage = document.getElementById("errorMessage");
+                var errorMessage1 = document.getElementById("errorMessage1");
+                var checkp = /^_|^@|^\d/;
+                var checke = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+
+                // Reset error messages
+                errorMessage.textContent = "";
+                errorMessage1.textContent = "";
+
+                if (mail == "" && pass == "") {
+                    errorMessage.textContent = "Please fill the email";
+                    errorMessage1.textContent = "Please fill the password";
+                    return false;
+                }
+                if (mail == "") {
+                    errorMessage.textContent = "Please fill the email";
+                    return false;
+                }
+                if (!checke.test(mail)) {
+                    errorMessage.textContent = "Email Invalid";
+                    return false;
+                }
+                if (pass == "") {
+                    errorMessage1.textContent = "Please fill the password";
+                    return false;
+                }
+                if (!checkp.test(pass) || pass.length < 8 || pass.length > 12) {
+                    errorMessage1.textContent = "Password Invalid! It must be between 8-12";
+                    return false;
+                }
+
+                // If none of the conditions above are met, the form is considered valid
+                return true;
+            }
+            function clearErrorMessage(e1) {
+                document.getElementById(e1).textContent = "";
+            }
+            function clearErrorMessage(p1) {
+                document.getElementById(p1).textContent = "";
+            }
+
+
+        </script>
+    </div>
+
+</body>
+
+</html>
